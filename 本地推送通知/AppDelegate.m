@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GCLocalNotification.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,52 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //ios8以上需要注册通知
+    [GCLocalNotification registerNotification];
+
+    // 界面的跳转(针对应用程序被杀死的状态下的跳转)
+    if (launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]) {
+        // 跳转代码
+		
+		NSLog(@"launchOptions : %@",launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]);
+		
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"接收到本地通知" message:@"这是通过本地推送来启动app" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+		[alertView show];
+    }
+
     return YES;
+}
+
+/*
+ 应用程序在进入前台,或者在前台的时候都会执行该方法
+ */
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"接收到本地通知" message:notification.alertBody delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+	[alertView show];
+}
+
+//ios8
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler {
+	
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:identifier message:notification.alertBody delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+	[alertView show];
+	
+	completionHandler();
+}
+
+//ios9
+-(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification withResponseInfo:(NSDictionary *)responseInfo completionHandler:(void (^)())completionHandler {
+	
+	
+	NSString *dec = [NSString stringWithFormat:@"text:%@",responseInfo[UIUserNotificationActionResponseTypedTextKey]];
+	
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:identifier message:dec delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+	[alertView show];
+	
+	completionHandler();
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

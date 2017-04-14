@@ -15,6 +15,8 @@
 		CA2BE2DD1C51DD1400F4ED45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA2BE2DB1C51DD1400F4ED45 /* LaunchScreen.storyboard */; };
 		CA2BE2E81C51DD1400F4ED45 /* ______Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2BE2E71C51DD1400F4ED45 /* ______Tests.m */; };
 		CA2BE2F31C51DD1400F4ED45 /* ______UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2BE2F21C51DD1400F4ED45 /* ______UITests.m */; };
+		CA2BE3051C51EF9400F4ED45 /* GCLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2BE3041C51EF9400F4ED45 /* GCLocalNotification.m */; };
+		CA2BE3071C51F1E000F4ED45 /* buyao.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA2BE3061C51F1E000F4ED45 /* buyao.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		CA2BE2EE1C51DD1400F4ED45 /* 本地推送通知UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "本地推送通知UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2BE2F21C51DD1400F4ED45 /* ______UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "______UITests.m"; sourceTree = "<group>"; };
 		CA2BE2F41C51DD1400F4ED45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA2BE3031C51EF9400F4ED45 /* GCLocalNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCLocalNotification.h; sourceTree = "<group>"; };
+		CA2BE3041C51EF9400F4ED45 /* GCLocalNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCLocalNotification.m; sourceTree = "<group>"; };
+		CA2BE3061C51F1E000F4ED45 /* buyao.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buyao.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +115,9 @@
 				CA2BE2DB1C51DD1400F4ED45 /* LaunchScreen.storyboard */,
 				CA2BE2DE1C51DD1400F4ED45 /* Info.plist */,
 				CA2BE2CD1C51DD1300F4ED45 /* Supporting Files */,
+				CA2BE3031C51EF9400F4ED45 /* GCLocalNotification.h */,
+				CA2BE3041C51EF9400F4ED45 /* GCLocalNotification.m */,
+				CA2BE3061C51F1E000F4ED45 /* buyao.wav */,
 			);
 			path = "本地推送通知";
 			sourceTree = "<group>";
@@ -207,6 +215,7 @@
 				TargetAttributes = {
 					CA2BE2C91C51DD1300F4ED45 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = YK4N47CEA6;
 					};
 					CA2BE2E21C51DD1400F4ED45 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -244,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA2BE2DD1C51DD1400F4ED45 /* LaunchScreen.storyboard in Resources */,
+				CA2BE3071C51F1E000F4ED45 /* buyao.wav in Resources */,
 				CA2BE2DA1C51DD1400F4ED45 /* Assets.xcassets in Resources */,
 				CA2BE2D81C51DD1400F4ED45 /* Main.storyboard in Resources */,
 			);
@@ -270,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2BE3051C51EF9400F4ED45 /* GCLocalNotification.m in Sources */,
 				CA2BE2D51C51DD1400F4ED45 /* ViewController.m in Sources */,
 				CA2BE2D21C51DD1400F4ED45 /* AppDelegate.m in Sources */,
 				CA2BE2CF1C51DD1300F4ED45 /* main.m in Sources */,
@@ -413,9 +424,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YK4N47CEA6;
 				INFOPLIST_FILE = "本地推送通知/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "hcjhg.------";
+				PRODUCT_BUNDLE_IDENTIFIER = text.dy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -424,9 +437,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YK4N47CEA6;
 				INFOPLIST_FILE = "本地推送通知/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "hcjhg.------";
+				PRODUCT_BUNDLE_IDENTIFIER = text.dy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -498,6 +513,7 @@
 				CA2BE2F91C51DD1400F4ED45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA2BE2FA1C51DD1400F4ED45 /* Build configuration list for PBXNativeTarget "本地推送通知Tests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +522,7 @@
 				CA2BE2FC1C51DD1400F4ED45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA2BE2FD1C51DD1400F4ED45 /* Build configuration list for PBXNativeTarget "本地推送通知UITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +531,7 @@
 				CA2BE2FF1C51DD1400F4ED45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

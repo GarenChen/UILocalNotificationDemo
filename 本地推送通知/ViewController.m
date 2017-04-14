@@ -7,12 +7,18 @@
 //
 
 #import "ViewController.h"
+#import "GCLocalNotification.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+
+
+- (IBAction)sendLocalNotification:(id)sender {
+    [GCLocalNotification fireLocalNote];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
